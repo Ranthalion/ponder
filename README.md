@@ -2,7 +2,7 @@
 Ponder is a touch based bluetootch keyboard with 10 keys.
 
 # TODO
-- [ ] Capacitive Touch buttons
+- [x] Capacitive Touch buttons
 - [ ] LED touch feedback
 - [ ] Power savimg mode
 - [ ] Bluetooth keyboard
