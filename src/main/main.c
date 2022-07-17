@@ -1,5 +1,6 @@
 #include "touch_button.h"
 #include "esp_log.h"
+#include "esp_sleep.h"
 
 #define TOUCH_BUTTON_NUM 14
 
@@ -29,5 +30,10 @@ void app_main(void)
     };
 
     initTouch(touch_init);
+    esp_sleep_enable_touchpad_wakeup();
+    esp_sleep_pd_config(ESP_PD_DOMAIN_RTC_PERIPH, ESP_PD_OPTION_ON);
+
     ESP_LOGI(TAG, "End app_main");
+    vTaskDelay(1000 / portTICK_PERIOD_MS);
+    esp_light_sleep_start();
 }
